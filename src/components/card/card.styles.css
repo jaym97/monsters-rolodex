@@ -1,0 +1,49 @@
+.card-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #95dada;
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 25px;
+    cursor: pointer;
+    -moz-osx-font-smoothing: grayscale;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    transition: transform 250ms ease-out;
+}
+
+.card-container:hover {
+    /* transform: scale(1.05); */
+    animation: changeShapeAnimation 1s ease-in-out;
+    animation-iteration-count: 2;
+}
+
+/* Monster Animation */
+@keyframes changeShapeAnimation {
+    20% {
+        transform: scale(0.5, 1.15);
+        opacity: .6;
+        background-color: rgba(230, 13, 13, 0.5);
+    }
+
+    40% {
+        opacity: 1;
+        transform: scale(1.1, 0.5);
+
+    }
+
+    60% {
+        background-color: rgba(218, 233, 15, 0.4);
+        transform: skew(45deg);
+    }
+
+    80% {
+        opacity: 0.3;
+        background-color: rgba(67, 13, 218, 0.7);
+        transform: skew(-45deg) scale(0.5, 1.1);
+    }
+
+    100% {
+        transform: skew(0deg);
+    }
+}
